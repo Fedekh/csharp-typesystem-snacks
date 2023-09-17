@@ -53,8 +53,6 @@ namespace csharp_typesystem_snacks
             }
 
 
-
-
             //2
             bool isInvalid2 = true;
             while (isInvalid2)
@@ -92,6 +90,35 @@ namespace csharp_typesystem_snacks
                 }
 
             }
+
+            //3
+            Console.WriteLine("Inserisci per 10 volte un numero :");
+
+            int somma = 0;
+            int i = 0;
+            bool isValid = true;
+
+            while (i < 10 && isValid)
+            {
+                string f = Console.ReadLine() ;
+                if(int.TryParse(f, out int num1))
+                {
+                    somma += num1;
+                    i++;
+                    if (i == 10)
+                    {
+                        Console.WriteLine($"La somma dei tuoi 10 numeri è : {somma}");
+                        Console.ReadLine();
+                        isValid = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("DEVI INSERIRE un numero intero:");
+                }
+
+            }
+
 
         }
     }
